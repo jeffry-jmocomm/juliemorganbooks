@@ -12,13 +12,13 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen py-32 px-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-12 tracking-tighter text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-12 tracking-tighter text-center text-slate-800">
           About the Author
         </h1>
 
         <div className="glass-panel p-8 md:p-12 rounded-3xl grid md:grid-cols-5 gap-12 items-center">
           {/* Author Image */}
-          <div className="md:col-span-2 relative aspect-[3/4] w-full max-w-sm mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+          <div className="md:col-span-2 relative aspect-[3/4] w-full max-w-sm mx-auto rounded-2xl overflow-hidden border border-black/5 shadow-xl">
             <img
               src="/author-image.jpg"
               alt="Julie Morgan"
@@ -27,9 +27,9 @@ export default function AboutPage() {
           </div>
 
           {/* Author Bio */}
-          <div className="md:col-span-3 space-y-6 text-slate-300 leading-relaxed">
+          <div className="md:col-span-3 space-y-6 text-slate-600 leading-relaxed">
             <p>
-              <strong className="text-white text-lg">
+              <strong className="text-slate-900 text-lg">
                 USA TODAY and Award-winning Bestselling Author, Julie Morgan,
               </strong>{" "}
               holds a degree in Computer Science and loves science fiction shows
@@ -43,15 +43,15 @@ export default function AboutPage() {
               lost in another world.
             </p>
 
-            <div className="pt-6 mt-6 border-t border-white/10">
-              <p className="text-sm text-slate-400 mb-4">
+            <div className="pt-6 mt-6 border-t border-black/5">
+              <p className="text-sm text-slate-500 mb-4">
                 Julie is represented by{" "}
-                <strong className="text-white">JMO Communications</strong>.
+                <strong className="text-slate-900">JMO Communications</strong>.
                 <br />
                 For more information please visit JMO at{" "}
                 <a
                   href="https://jmocomm.com"
-                  className="text-[var(--color-brand-blue)] hover:underline"
+                  className="text-[var(--color-brand-purple)] hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -64,7 +64,7 @@ export default function AboutPage() {
                   href="https://facebook.com/juliemorganbook"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/5 rounded-full hover:bg-[var(--color-brand-blue)] hover:text-white transition-colors"
+                  className="p-2 bg-black/5 text-slate-600 rounded-full hover:bg-[var(--color-brand-purple)] hover:text-white transition-colors"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -83,7 +83,7 @@ export default function AboutPage() {
                   href="https://instagram.com/juliemorganbooks"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/5 rounded-full hover:bg-[var(--color-brand-purple)] hover:text-white transition-colors"
+                  className="p-2 bg-black/5 text-slate-600 rounded-full hover:bg-[var(--color-brand-purple)] hover:text-white transition-colors"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 </a>
                 <a
                   href="mailto:julie@juliemorganbooks.com"
-                  className="p-2 bg-white/5 rounded-full hover:bg-white hover:text-black transition-colors"
+                  className="p-2 bg-black/5 text-slate-600 rounded-full hover:bg-slate-900 hover:text-white transition-colors"
                 >
                   <Mail size={18} />
                 </a>
@@ -130,7 +130,7 @@ export default function AboutPage() {
         <div className="mt-16 text-center">
           <Link
             href="/#books"
-            className="inline-flex items-center justify-center px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full font-medium transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3 bg-black/5 hover:bg-black/10 border border-black/10 text-slate-800 rounded-full font-medium transition-colors"
           >
             Explore Her Books
           </Link>

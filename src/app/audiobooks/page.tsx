@@ -25,7 +25,7 @@ interface AudiobookCardProps {
 function AudiobookCard({ title, imageUrl, audibleLink = "#" }: AudiobookCardProps) {
   return (
     <motion.div variants={fadeIn} className="glass-panel hover-glow rounded-3xl overflow-hidden flex flex-col group h-full">
-      <div className="aspect-[2/3] w-full relative overflow-hidden bg-slate-900 border-b border-white/5">
+      <div className="aspect-[2/3] w-full relative overflow-hidden bg-slate-200 border-b border-black/5">
         <img 
           src={imageUrl} 
           alt={title} 
@@ -37,7 +37,7 @@ function AudiobookCard({ title, imageUrl, audibleLink = "#" }: AudiobookCardProp
         </div>
       </div>
       <div className="p-6 flex-1 flex flex-col text-center">
-        <h3 className="text-xl font-bold mb-6 text-slate-100 leading-tight">{title}</h3>
+        <h3 className="text-xl font-bold mb-6 text-slate-900 leading-tight">{title}</h3>
         <div className="mt-auto">
           <a 
             href={audibleLink}
@@ -58,7 +58,7 @@ export default function AudiobooksPage() {
     <div className="min-h-screen py-32 px-6 overflow-hidden relative">
       
       {/* Background Soundwave Graphic */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1200px] h-[400px] -z-10 pointer-events-none flex justify-between items-end opacity-[0.03]">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1200px] h-[400px] -z-10 pointer-events-none flex justify-between items-end opacity-[0.08]">
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
@@ -71,7 +71,7 @@ export default function AudiobooksPage() {
               ease: "easeInOut",
               delay: Math.random() * 2
             }}
-            className="w-4 bg-gradient-to-t from-[var(--color-brand-purple)] to-[var(--color-brand-blue)] rounded-t-full"
+            className="w-4 bg-gradient-to-t from-[var(--color-brand-purple)] to-[var(--color-brand-purple)] rounded-t-full"
             style={{ filter: "blur(2px)" }}
           />
         ))}
@@ -85,10 +85,10 @@ export default function AudiobooksPage() {
             <div className="inline-flex items-center justify-center p-4 bg-[var(--color-brand-purple)]/10 rounded-full mb-6 ring-1 ring-[var(--color-brand-purple)]/30 shadow-[0_0_30px_rgba(168,85,247,0.2)]">
               <Headphones size={32} className="text-[var(--color-brand-purple)]" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter text-slate-900">
               Available Audiobooks
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Experience Julie Morgan's rich worlds in a whole new way. Immersive storytelling narrated to bring every character vividly to life.
             </p>
           </motion.div>
@@ -103,7 +103,7 @@ export default function AudiobooksPage() {
           className="mb-32"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-200">The Covenant of New Orleans</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">The Covenant of New Orleans</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--color-brand-purple)] to-transparent mx-auto mt-6 opacity-50" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -121,8 +121,8 @@ export default function AudiobooksPage() {
           variants={staggerContainer}
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-200">The Alchemy Series</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--color-brand-blue)] to-transparent mx-auto mt-6 opacity-50" />
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">The Alchemy Series</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--color-brand-purple)] to-transparent mx-auto mt-6 opacity-50" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <AudiobookCard title="Deadly Alchemy" imageUrl="/the-alchemy-series-deadly-alchemy.jpg" />

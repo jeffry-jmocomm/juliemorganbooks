@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #3b82f6;
-  --color-brand-purple: #a855f7;
-  --color-brand-dark: #020617; /* slate-950 */
-  --color-brand-glow: rgba(59, 130, 246, 0.5);
+  --color-brand-purple: #a855f7; /* Keep the bright purple */
+  --color-brand-silver: #e2e8f0; /* Silver accents */
+  --color-brand-dark: #0f172a; /* slate-900 */
+  --color-brand-glow: rgba(168, 85, 247, 0.5); /* Purple glow */
   
   --font-sans: var(--font-inter);
 }
 
 :root {
-  /* Force dark mode for this site */
-  --background: #020617;
-  --foreground: #f8fafc;
+  /* Bright Silver Theme with Pink */
+  --background: #F4DFDD;
+  --foreground: #0f172a; /* slate-900 */
 }
 
 body {
@@ -22,12 +22,13 @@ body {
   overflow-x: hidden;
 }
 
-/* Glassmorphism utility classes */
+/* Glassmorphism utility classes - inverted for light theme */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hover-glow {
@@ -35,6 +36,6 @@ body {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px var(--color-brand-glow);
-  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 25px var(--color-brand-glow);
+  border-color: rgba(0, 229, 255, 0.5);
 }

@@ -50,8 +50,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         {/* Abstract Glow Background */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-brand-blue)]/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[var(--color-brand-purple)]/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-brand-purple)]/15 rounded-full blur-[120px] -z-10 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[var(--color-brand-purple)]/15 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
@@ -59,16 +59,16 @@ export default function Home() {
               <img
                 src="/julie-morgan-logo.png"
                 alt="Julie Morgan Books"
-                className="w-full max-w-[320px] md:max-w-[450px] h-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                className="w-full max-w-[320px] md:max-w-[450px] h-auto object-contain drop-shadow-[0_0_20px_rgba(0,0,0,0.1)]"
               />
             </div>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-xs font-medium text-[var(--color-brand-blue)] mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-xs font-medium text-[var(--color-brand-purple)] mb-6">
               <Sparkles size={14} /> USA Today Bestselling Author
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 bg-gradient-to-br from-white via-slate-200 to-slate-500 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 bg-gradient-to-br from-slate-900 via-slate-700 to-slate-500 bg-clip-text text-transparent">
               Discover Worlds <br /> Beyond Imagination
             </h1>
-            <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
               Julie Morgan crafts stories that pull you in from the very first
               page and refuse to let go. From paranormal fantasies to
               swoon-worthy romance and pulse-pounding adventure, her universes
@@ -78,7 +78,7 @@ export default function Home() {
               <Link
                 href="#books"
                 onClick={handleScrollToBooks}
-                className="px-8 py-4 bg-gradient-to-r from-[var(--color-brand-blue)] to-[var(--color-brand-purple)] rounded-full text-white font-medium hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-[var(--color-brand-purple)] to-[var(--color-brand-purple)] rounded-full text-white font-medium hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all flex items-center gap-2"
               >
                 Explore the Books <ArrowRight size={18} />
               </Link>
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* Genres Section */}
-      <section className="py-20 px-6 border-y border-white/5 bg-black/20">
+      <section className="py-20 px-6 border-y border-black/5 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -101,17 +101,17 @@ export default function Home() {
               {
                 title: "Paranormal Fantasy",
                 desc: "Epic worlds filled with magic, destiny, and heroes who rise against impossible odds.",
-                icon: <IconParanormalSupernatural className="text-[var(--color-brand-blue)] mb-4" />
+                icon: <IconParanormalSupernatural className="text-[var(--color-brand-purple)] mb-4" />
               },
               {
                 title: "Romance",
                 desc: "Swoon-worthy love stories woven through supernatural realms and enchanted lives.",
-                icon: <IconParanormalFantasy className="text-[var(--color-brand-blue)] mb-4" />
+                icon: <IconParanormalFantasy className="text-[var(--color-brand-purple)] mb-4" />
               },
               {
                 title: "Paranormal & Supernatural",
                 desc: "Dark, thrilling worlds where the line between the living and the beyond blurs beautifully.",
-                icon: <IconRomance className="text-[var(--color-brand-blue)] mb-4" />
+                icon: <IconRomance className="text-[var(--color-brand-purple)] mb-4" />
               },
             ].map((genre, i) => (
               <motion.div
@@ -120,8 +120,8 @@ export default function Home() {
                 className="glass-panel p-8 rounded-2xl"
               >
                 {genre.icon}
-                <h3 className="text-xl font-bold mb-3">{genre.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
+                <h3 className="text-xl font-bold mb-3 text-slate-800">{genre.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
                   {genre.desc}
                 </p>
               </motion.div>
@@ -146,23 +146,23 @@ export default function Home() {
                 <span className="inline-block px-3 py-1 bg-[var(--color-brand-purple)]/20 text-[var(--color-brand-purple)] text-xs font-bold tracking-widest uppercase rounded mb-4">
                   Coming Soon
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-800">
                   The Mercybound Saga: Mercy In Fire
                 </h2>
-                <p className="text-slate-300 mb-6 leading-relaxed">
+                <p className="text-slate-600 mb-6 leading-relaxed">
                   Prepare yourself for Julie Morgan's most ambitious work yet.
                   The Mercybound Saga is an epic tale of destiny, sacrifice, and
                   power — where the choices made by a few will determine the
                   fate of an entire world. Ancient forces are stirring,
                   alliances will be tested, and no one will emerge unchanged.
                 </p>
-                <p className="text-slate-400 mb-8 italic">
+                <p className="text-slate-500 mb-8 italic">
                   This sweeping saga promises rich world-building, unforgettable
                   characters, and a story that will leave you breathless. Add it
                   to your reading list now and be the first to know when it
                   arrives.
                 </p>
-                <button className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg font-medium transition-colors">
+                <button className="px-6 py-3 bg-black/5 hover:bg-black/10 text-slate-800 border border-black/10 rounded-lg font-medium transition-colors">
                   Join the Waitlist
                 </button>
               </div>
@@ -190,9 +190,9 @@ export default function Home() {
           >
             {/* Featured Series Details */}
             <div className="grid md:grid-cols-5 gap-12 lg:gap-16 items-center mb-16 relative">
-              <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[var(--color-brand-blue)]/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+              <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[var(--color-brand-purple)]/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
-              <div className="md:col-span-2 relative aspect-[3/4] w-full max-w-sm lg:max-w-md mx-auto shadow-2xl rounded-xl overflow-hidden shadow-[var(--color-brand-blue)]/20 border border-white/10 hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-500">
+              <div className="md:col-span-2 relative aspect-[3/4] w-full max-w-sm lg:max-w-md mx-auto shadow-2xl rounded-xl overflow-hidden shadow-[var(--color-brand-purple)]/20 border border-black/5 hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-500">
                 <img
                   src="/speed-dating-the-denizens-samael.jpg"
                   alt="Speed Dating with the Denizens: Samael"
@@ -201,33 +201,33 @@ export default function Home() {
               </div>
 
               <div className="md:col-span-3">
-                <div className="mb-8 border-b border-white/5 pb-8">
-                  <span className="inline-block px-3 py-1 bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue)] text-xs font-bold tracking-widest uppercase rounded mb-4">
+                <div className="mb-8 border-b border-black/5 pb-8">
+                  <span className="inline-block px-3 py-1 bg-[var(--color-brand-purple)]/10 text-[var(--color-brand-purple)] text-xs font-bold tracking-widest uppercase rounded mb-4">
                     A Whimsical Encounter Like No Other
                   </span>
-                  <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                  <h2 className="text-3xl md:text-5xl font-bold leading-tight text-slate-800">
                     Speed Dating with the Denizens of the Underworld
                   </h2>
                 </div>
-                <p className="text-slate-300 mb-6 leading-relaxed">
+                <p className="text-slate-600 mb-6 leading-relaxed">
                   What happens when romance meets the supernatural — and nobody
                   plays by the rules? This delightfully offbeat story blends
                   laugh-out-loud humor with the otherworldly, dropping you into
                   a speed dating event unlike anything you've imagined.
                 </p>
-                <p className="text-slate-400 mb-8 italic">
+                <p className="text-slate-500 mb-8 italic">
                   Charming, witty, and utterly unpredictable, it's the perfect
                   read for anyone who likes their romance with a side of the
                   uncanny.
                 </p>
-                <button className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg font-medium transition-colors">
+                <button className="px-6 py-3 bg-black/5 hover:bg-black/10 border border-black/10 text-slate-800 rounded-lg font-medium transition-colors">
                   Read more
                 </button>
               </div>
             </div>
 
             {/* Other Books in Series */}
-            <div className="inline-block px-3 py-1 bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue)] text-xs font-bold tracking-widest uppercase rounded mb-4">
+            <div className="inline-block px-3 py-1 bg-[var(--color-brand-purple)]/10 text-[var(--color-brand-purple)] text-xs font-bold tracking-widest uppercase rounded mb-4">
               More in the series
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -252,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* Covenant of New Orleans - Full Width Glass Panel */}
-      <section className="w-full glass-panel border-y border-white/5 py-40 px-6 my-24">
+      <section className="w-full glass-panel border-y border-black/5 py-40 px-6 my-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -261,7 +261,7 @@ export default function Home() {
             variants={fadeIn}
           >
             <div className="mb-12 max-w-3xl">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-slate-800">
                 The Covenant of New Orleans Series
               </h2>
             </div>
@@ -293,16 +293,16 @@ export default function Home() {
             variants={fadeIn}
             className="mb-32 pt-16"
           >
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 border-b border-white/5 pb-12">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 border-b border-black/5 pb-12">
               <div className="max-w-2xl">
-                <span className="inline-block px-3 py-1 bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue)] text-xs font-bold tracking-widest uppercase rounded mb-4">
+                <span className="inline-block px-3 py-1 bg-[var(--color-brand-purple)]/10 text-[var(--color-brand-purple)] text-xs font-bold tracking-widest uppercase rounded mb-4">
                   Magic & Mystery
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold leading-tight text-slate-800">
                   The Alchemy Series
                 </h2>
               </div>
-              <button className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg font-medium transition-colors whitespace-nowrap self-start md:self-auto">
+              <button className="px-6 py-3 bg-black/5 hover:bg-black/10 border border-black/10 text-slate-800 rounded-lg font-medium transition-colors whitespace-nowrap self-start md:self-auto">
                 Explore Series
               </button>
             </div>
@@ -333,19 +333,19 @@ export default function Home() {
           >
             <div className="grid md:grid-cols-5 gap-12 items-center">
               <div className="md:col-span-2">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-800">
                   Fairytale Retellings
                 </h2>
-                <p className="text-slate-400 mb-8 leading-relaxed">
+                <p className="text-slate-600 mb-8 leading-relaxed">
                   The stories you grew up loving, reimagined with depth,
                   complexity, and a fresh perspective. Julie Morgan breathes new
                   life into beloved classics, honoring their timeless magic
                   while reinventing them for a new generation of readers.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 text-slate-700">
                   <li className="flex gap-3">
                     <Sparkles
-                      className="text-[var(--color-brand-blue)] flex-shrink-0"
+                      className="text-[var(--color-brand-purple)] flex-shrink-0"
                       size={20}
                     />{" "}
                     <span>
@@ -355,7 +355,7 @@ export default function Home() {
                   </li>
                   <li className="flex gap-3">
                     <Sparkles
-                      className="text-[var(--color-brand-blue)] flex-shrink-0"
+                      className="text-[var(--color-brand-purple)] flex-shrink-0"
                       size={20}
                     />{" "}
                     <span>
@@ -365,7 +365,7 @@ export default function Home() {
                   </li>
                   <li className="flex gap-3">
                     <Sparkles
-                      className="text-[var(--color-brand-blue)] flex-shrink-0"
+                      className="text-[var(--color-brand-purple)] flex-shrink-0"
                       size={20}
                     />{" "}
                     <span>
@@ -400,11 +400,11 @@ export default function Home() {
             variants={fadeIn}
             className="mb-32 pt-16"
           >
-            <div className="mb-16 max-w-3xl border-b border-white/5 pb-12">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            <div className="mb-16 max-w-3xl border-b border-black/5 pb-12">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-slate-800">
                 Series Collections: Dive Deeper into Beloved Worlds
               </h2>
-              <p className="text-lg text-slate-400 leading-relaxed">
+              <p className="text-lg text-slate-600 leading-relaxed">
                 Whether you're a devoted fan ready to binge an entire universe
                 or a newcomer looking for the perfect entry point, Julie
                 Morgan's curated collections have you covered.
@@ -412,10 +412,10 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
               <div className="">
-                <h4 className="font-bold text-[var(--color-brand-blue)] mb-2">
+                <h4 className="font-bold text-[var(--color-brand-purple)] mb-2">
                   The Three in One Set
                 </h4>
-                <p className="text-sm text-slate-400 mb-6">
+                <p className="text-sm text-slate-600 mb-6">
                   Three complete stories bound together — perfect for readers
                   who can't stop at just one.
                 </p>
@@ -424,10 +424,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="">
-                <h4 className="font-bold text-[var(--color-brand-blue)] mb-2">
+                <h4 className="font-bold text-[var(--color-brand-purple)] mb-2">
                   Rise of the Alpha Series
                 </h4>
-                <p className="text-sm text-slate-400 mb-6">
+                <p className="text-sm text-slate-600 mb-6">
                   Thrilling paranormal fantasies where power, pack and passion
                   collide in spectacular fashion.
                 </p>
@@ -437,10 +437,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="">
-                <h4 className="font-bold text-[var(--color-brand-blue)] mb-2">
+                <h4 className="font-bold text-[var(--color-brand-purple)] mb-2">
                   Chronicles of the Veil
                 </h4>
-                <p className="text-sm text-slate-400 mb-6">
+                <p className="text-sm text-slate-600 mb-6">
                   Journey through realms of magic and intrigue where the
                   boundary between worlds is paper-thin.
                 </p>
@@ -468,13 +468,13 @@ export default function Home() {
               size={48}
               className="mx-auto text-[var(--color-brand-purple)] mb-6"
             />
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
               Listen Anywhere, Anytime
             </h2>
             <h3 className="text-xl text-[var(--color-brand-purple)] mb-6">
               Experience the Stories in Audio
             </h3>
-            <p className="text-slate-300 leading-relaxed mb-8">
+            <p className="text-slate-600 leading-relaxed mb-8">
               Can't put the book down — even when life gets in the way? Take
               Julie Morgan's worlds with you wherever you go. From morning
               commutes to evening walks, her audiobooks deliver the same rich
@@ -483,7 +483,7 @@ export default function Home() {
             </p>
             <Link 
               href="/audiobooks"
-              className="inline-block px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-slate-200 transition-colors"
+              className="inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-colors"
             >
               Browse Audiobooks
             </Link>
@@ -500,10 +500,10 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[var(--color-brand-blue)] to-white bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[var(--color-brand-purple)] to-slate-800 bg-clip-text text-transparent">
               Find Your Next Favorite Read
             </h2>
-            <p className="text-slate-400 mb-10 text-lg">
+            <p className="text-slate-600 mb-10 text-lg">
               Your next obsession is waiting. Browse Julie Morgan's full
               collection of fantasy, romance, paranormal, and adventure titles —
               and discover the story that was written just for you.
@@ -511,7 +511,7 @@ export default function Home() {
             <Link
               href="#books"
               onClick={handleScrollToBooks}
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full font-medium transition-colors"
+              className="px-8 py-4 bg-black/5 hover:bg-black/10 border border-black/10 text-slate-800 rounded-full font-medium transition-colors"
             >
               Back to Full Collection
             </Link>
