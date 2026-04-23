@@ -35,11 +35,13 @@ export default function Navbar() {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <div className={`max-w-6xl w-full mx-auto flex items-center min-h-[5rem] md:min-h-[7rem] ${pathname === '/' ? 'justify-center' : 'justify-between'}`}>
         
-        <Link href="/" className="flex items-center">
-          <img src="/julie-morgan-logo.png" alt="Julie Morgan Books" className="h-20 md:h-28 w-auto object-contain" />
-        </Link>
+        {pathname !== '/' && (
+          <Link href="/" className="flex items-center">
+            <img src="/julie-morgan-logo.png" alt="Julie Morgan Books" className="h-20 md:h-28 w-auto object-contain" />
+          </Link>
+        )}
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
           <div className="flex items-center gap-6">

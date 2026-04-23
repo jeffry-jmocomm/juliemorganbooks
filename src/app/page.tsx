@@ -55,6 +55,13 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+            <div className="flex justify-center mb-8">
+              <img
+                src="/julie-morgan-logo.png"
+                alt="Julie Morgan Books"
+                className="w-full max-w-[320px] md:max-w-[450px] h-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+              />
+            </div>
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-xs font-medium text-[var(--color-brand-blue)] mb-6">
               <Sparkles size={14} /> USA Today Bestselling Author
             </span>
