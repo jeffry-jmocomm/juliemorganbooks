@@ -5,9 +5,10 @@ interface BookCardProps {
   description?: string;
   imageUrl?: string;
   amazonLink?: string;
+  buttonText?: string;
 }
 
-export default function BookCard({ title, description, imageUrl, amazonLink = '#' }: BookCardProps) {
+export default function BookCard({ title, description, imageUrl, amazonLink = '#', buttonText = "Get the Book" }: BookCardProps) {
   return (
     <div className="glass-panel hover-glow rounded-2xl overflow-hidden flex flex-col group h-full">
       <div className="aspect-[2/3] w-full bg-slate-900 relative border-b border-white/5">
@@ -30,7 +31,7 @@ export default function BookCard({ title, description, imageUrl, amazonLink = '#
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue)] border border-[var(--color-brand-blue)]/30 rounded-lg hover:bg-[var(--color-brand-blue)] hover:text-white transition-all font-medium text-sm"
           >
-            Buy on Amazon <ExternalLink size={16} />
+            {buttonText} <ExternalLink size={16} />
           </a>
         </div>
       </div>

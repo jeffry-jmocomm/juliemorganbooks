@@ -227,14 +227,17 @@ export default function Home() {
               <BookCard
                 title="Hells Belle"
                 imageUrl="/speed-dating-the-denizens-hells-belle.jpg"
+                buttonText="Start Reading"
               />
               <BookCard
                 title="Cassiel"
                 imageUrl="/speed-dating-the-denizens-cassiel.jpg"
+                buttonText="Start Reading"
               />
               <BookCard
                 title="Alastor"
                 imageUrl="/speed-dating-the-denizens-alastor.jpg"
+                buttonText="Start Reading"
               />
             </div>
           </motion.div>
@@ -410,7 +413,7 @@ export default function Home() {
                   who can't stop at just one.
                 </p>
                 <div className="w-48 ">
-                  <BookCard title="The Three in One Set" imageUrl="/the-three-in-one-set.png" />
+                  <BookCard title="The Three in One Set" imageUrl="/the-three-in-one-set.png" buttonText="Get Collection" />
                 </div>
               </div>
               <div className="">
