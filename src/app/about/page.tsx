@@ -129,7 +129,7 @@ export default function AboutPage() {
 
         <div className="mt-16 text-center">
           <Link
-            href="/#books"
+            href="/"
             className="inline-flex items-center justify-center px-8 py-3 bg-black/5 hover:bg-black/10 border border-black/10 text-slate-800 rounded-full font-medium transition-colors"
           >
             Explore Her Books
