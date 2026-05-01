@@ -65,13 +65,13 @@ const COVENANT = [
 const BLOOD_CHRONICLES = [
   {
     title: "Blood Chronicles: New Orleans",
-    imageUrl: "",
-    amazonLink: "https://www.juliemorganbooks.com/",
+    imageUrl: "/blood-chronicales-new-orleans.jpg",
+    amazonLink: "https://books2read.com/u/bOYN7W",
   },
   {
     title: "Blood Chronicles: Paris",
-    imageUrl: "",
-    amazonLink: "https://www.juliemorganbooks.com/",
+    imageUrl: "/blood-chronicles-paris.jpg",
+    amazonLink: "https://books2read.com/u/47jVAA",
   },
 ];
 
@@ -80,8 +80,7 @@ const FAIRY_TALE = [
     title: "The Beast Underneath",
     subTitle: "Beauty & the Beast",
     imageUrl: "/the-fairytale-retellings-the-beast-underneath.jpg",
-    amazonLink:
-      "https://www.amazon.com/Beast-Underneath-Fairytale-Chronicles-Book-ebook",
+    amazonLink: "https://www.amazon.com/dp/B07GRWJDJ9/",
   },
   {
     title: "The Huntress",
@@ -130,7 +129,7 @@ const RISE_ALPHA = [
   {
     title: "Alpha Redeemed",
     imageUrl: "/alpha-redeemed.jpg",
-    amazonLink: "http://books2read.com/alphereedem1",
+    amazonLink: "https://books2read.com/alpharedeemed1",
   },
   {
     title: "An Alpha Christmas",
@@ -686,22 +685,22 @@ export default function Home() {
                 {
                   label: "The Three in One Set",
                   desc: "Three complete stories bound together — perfect for readers who can't stop at just one.",
-                  src: "/the-three-in-one-set.png",
+                  src: "/chronicles-of-the-veil-collection.jpg ",
                   title: "The Three in One Set",
-                  link: "https://www.amazon.com/dp/B08Q8NNVKJ/",
+                  link: "https://books2read.com/u/3k2758",
                 },
-                {
-                  label: "Rise of the Alpha Collection",
-                  desc: "The full Rise of the Alpha series in one volume — power, pack, and passion.",
-                  src: "/rise-of-the-alpha-series-alpha-rising.jpg",
-                  title: "Rise of the Alpha Collection",
-                },
-                {
-                  label: "Covenant of New Orleans Collection",
-                  desc: "All three Covenant books in one unforgettable set.",
-                  src: "/the-covenant-of-new-orleans-the-concubine-and-her-vampires.jpg",
-                  title: "Covenant Collection",
-                },
+                // {
+                //   label: "Rise of the Alpha Collection",
+                //   desc: "The full Rise of the Alpha series in one volume — power, pack, and passion.",
+                //   src: "/rise-of-the-alpha-series-alpha-rising.jpg",
+                //   title: "Rise of the Alpha Collection",
+                // },
+                // {
+                //   label: "Covenant of New Orleans Collection",
+                //   desc: "All three Covenant books in one unforgettable set.",
+                //   src: "/the-covenant-of-new-orleans-the-concubine-and-her-vampires.jpg",
+                //   title: "Covenant Collection",
+                // },
               ].map((c) => (
                 <div key={c.label}>
                   <h4 className="font-bold text-[var(--color-brand-purple)] mb-2">
@@ -712,7 +711,7 @@ export default function Home() {
                     <BookCard
                       title={c.title}
                       imageUrl={c.src}
-                      amazonLink="https://www.juliemorganbooks.com/"
+                      amazonLink={c.link}
                       buttonText="Get Collection"
                     />
                   </div>
