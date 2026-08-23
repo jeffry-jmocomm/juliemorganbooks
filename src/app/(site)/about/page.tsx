@@ -19,7 +19,7 @@ export default function AboutPage() {
           {/* Author Image */}
           <div className="md:col-span-2 relative aspect-[3/4] w-full max-w-sm mx-auto rounded-2xl overflow-hidden border border-[var(--color-brand-purple)]/20 shadow-xl shadow-[var(--color-brand-purple)]/10">
             <img
-              src="/author-image.jpg"
+              src="/author-image-new.jpg"
               alt="Julie Morgan"
               className="w-full h-full object-cover"
             />
