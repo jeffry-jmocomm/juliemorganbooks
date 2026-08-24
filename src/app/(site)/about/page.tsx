@@ -16,7 +16,7 @@ export default function AboutPage() {
         </h1>
 
         <div className="glass-panel p-8 md:p-12 rounded-3xl grid md:grid-cols-5 gap-12 items-center">
-          {/* Author Image */}
+          {/* Author Image updated */}
           <div className="md:col-span-2 relative aspect-[3/4] w-full max-w-sm mx-auto rounded-2xl overflow-hidden border border-[var(--color-brand-purple)]/20 shadow-xl shadow-[var(--color-brand-purple)]/10">
             <img
               src="/author-image-new.jpg"
