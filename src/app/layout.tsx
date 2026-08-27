@@ -19,7 +19,7 @@ const cinzel = Cinzel_Decorative({
 });
 
 export const metadata: Metadata = {
-  title: "JJulie Morgan - USA Today Bestselling Author",
+  title: "Julie Morgan - USA Today Bestselling Author",
   description:
     "Official website of USA TODAY Bestselling Author Julie Morgan. Explore paranormal fantasy, dark romance, and supernatural adventure books.",
   openGraph: {
