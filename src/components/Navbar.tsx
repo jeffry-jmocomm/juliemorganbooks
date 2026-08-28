@@ -54,37 +54,32 @@ export default function Navbar() {
           {/* Desktop Links — always on right */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
             <div className="flex items-center gap-6">
-              <Link
-                href="/#books"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Books
-              </Link>
-              <Link
-                href="/about"
-                className="hover:text-white transition-colors duration-300"
-              >
-                About Me
-              </Link>
-              <Link
-                href="/newsletter"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Newsletter
-              </Link>
-              <Link
-                href="/blog"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/privacy"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Privacy
-              </Link>
-            </div>
+  {[
+    { name: "Books", href: "/#books" },
+    { name: "About Me", href: "/about" },
+    { name: "Newsletter", href: "/newsletter" },
+    { name: "Blog", href: "/blog" },
+    { name: "Privacy", href: "/privacy" },
+  ].map((item) => {
+    const isActive = item.href !== "/#books" && pathname === item.href;
+    return (
+      <Link
+        key={item.name}
+        href={item.href}
+        className={`relative transition-colors duration-300 group ${
+          isActive ? "text-white" : "text-slate-400 hover:text-white"
+        }`}
+      >
+        {item.name}
+        <span
+          className={`absolute -bottom-1 left-0 h-[2px] rounded-full bg-gradient-to-r from-[var(--color-brand-pink)] to-[var(--color-brand-purple-light)] transition-all duration-300 ${
+            isActive ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-60"
+          }`}
+        />
+      </Link>
+    );
+  })}
+</div>
 
             <div className="flex items-center gap-4 pl-6 border-l border-white/10">
               <a
@@ -217,10 +212,13 @@ export default function Navbar() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
                   }}
-                  className={`text-3xl font-serif text-white/90 hover:text-[var(--color-brand-purple-light)] transition-all duration-300 transform ${isMenuOpen
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-4 opacity-0"
-                    }`}
+                  className={`text-3xl font-serif transition-all duration-300 transform ${
+  isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+} ${
+  item.href !== "/#books" && pathname === item.href
+    ? "text-[var(--color-brand-purple-light)]"
+    : "text-white/90 hover:text-[var(--color-brand-purple-light)]"
+}`}
                   style={{ transitionDelay: `${i * 100 + 200}ms` }}
                 >
                   {item.name}

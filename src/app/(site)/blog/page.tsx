@@ -169,7 +169,8 @@ export default async function BlogPage({
                           <div className="flex flex-wrap gap-2 mb-8">
                             {posts[0].categories.map((cat: any) => (
                               <span
-                                key={cat.slug}
+                                // key={cat.slug}
+                                key={cat.slug ?? cat.title}
                                 className="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[10px] font-bold uppercase tracking-widest text-[var(--color-brand-purple-light)]"
                               >
                                 {cat.title}
@@ -245,7 +246,8 @@ export default async function BlogPage({
                           <div className="flex flex-wrap gap-2 mb-6">
                             {post.categories.map((cat: any) => (
                               <span
-                                key={cat.slug}
+                                // key={cat.slug}
+                                key={cat.slug ?? cat.title}
                                 className="px-2 py-0.5 rounded-full bg-purple-500/5 border border-purple-500/10 text-[9px] font-bold uppercase tracking-wider text-[var(--color-brand-purple-light)]"
                               >
                                 {cat.title}

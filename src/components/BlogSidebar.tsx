@@ -95,8 +95,10 @@ export default function BlogSidebar({
           <div className="space-y-2">
             {categories.map((cat) => (
               <Link
-                key={cat.slug}
-                href={`/blog?category=${cat.slug}`}
+                // key={cat.slug}
+                // href={`/blog?category=${cat.slug}`}
+                key={cat.slug ?? cat.title}
+                href={`/blog?category=${cat.slug ?? cat.title}`}
                 className={`block text-sm transition-all hover:text-white ${
                   currentCategory === cat.slug
                     ? "text-[var(--color-brand-purple-light)] font-bold"

@@ -412,9 +412,10 @@ export default function Home() {
               made by a few will determine the fate of an entire world.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="btn-gradient px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 flex items-center gap-2">
-                Pre-order Now <ArrowRight size={18} />
-              </button>
+              <Link href="/blog/new-series-and-new-books" className="btn-gradient px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 flex items-center gap-2">
+              Learn more <ArrowRight size={18} />
+              </Link>
+          
               <Link
                 href="#books"
                 onClick={handleScrollToBooks}

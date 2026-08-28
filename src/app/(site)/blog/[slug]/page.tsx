@@ -90,8 +90,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <div className="flex flex-wrap gap-3 mb-6">
                 {post.categories.map((cat: any) => (
                   <Link 
-                    key={cat.slug.current} 
-                    href={`/blog?category=${cat.slug.current}`}
+                    // key={cat.slug.current} 
+                    // href={`/blog?category=${cat.slug.current}`}
+                    key={cat.slug ?? cat.title}
+                    href={`/blog?category=${cat.slug}`}
                     className="px-3 py-1 rounded-full bg-white/5 text-xs uppercase tracking-widest text-[var(--color-brand-purple-light)] hover:bg-white/10 transition-colors"
                   >
                     {cat.title}
