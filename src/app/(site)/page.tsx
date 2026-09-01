@@ -17,7 +17,7 @@ import {
   Flame,
 } from "lucide-react";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -98,12 +98,12 @@ const BLOOD_CHRONICLES = [
   {
     title: "Blood Chronicles: New Orleans",
     imageUrl: "/blood-chronicles-new-orleans.jpg",
-    amazonLink: "https://books2read.com/u/bOYN7W",
+    amazonLink: "https://books2read.com/u/3n6drR",
   },
   {
     title: "Blood Chronicles: Paris",
     imageUrl: "/blood-chronicles-paris.jpg",
-    amazonLink: "https://books2read.com/u/47jVAA",
+    amazonLink: "https://books2read.com/u/bpB7lW",
   },
 ];
 
@@ -122,6 +122,11 @@ const FAIRY_TALE = [
     title: "Ella's Prince",
     imageUrl: "/ellas-prince.jpg",
     amazonLink: "https://amzn.to/37TLzGS",
+  },
+  {
+    title: "Fairytale Chronicles: 3-in-1 Collection",
+    imageUrl: "/fairytale-chronicles-3-in-1.jpg",
+    amazonLink: "https://www.amazon.com/dp/B08Q8NNVKJ",
   },
 ];
 
@@ -331,6 +336,8 @@ function SeriesWithBlurb({
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
+  const [showCover, setShowCover] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const handleScrollToBooks = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.getElementById("books")?.scrollIntoView({ behavior: "smooth" });
@@ -374,23 +381,41 @@ export default function Home() {
             </div>
             {/* Ambient glow behind the cover */}
             <div className="absolute w-[80%] h-[80%] bg-gradient-to-br from-cyan-500/10 via-purple-500/15 to-pink-500/10 rounded-full blur-[80px] animate-pulse pointer-events-none" />
-            <div className="book-throb w-full aspect-[3/4] relative">
-              <div className="absolute inset-0 -rotate-2 rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_rgba(147,51,234,0.3),0_0_120px_rgba(0,200,200,0.15)] gradient-border group hover:scale-[1.02] hover:-rotate-0 transition-all duration-700 z-10">
-                <img
-                  src="/the-mercy-bound-saga-mercy-in-fire.jpg"
-                  alt="Mercy In Fire"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+           <div className="book-throb w-full aspect-[3/4] relative">
+  <div className="absolute inset-0 -rotate-2 rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_rgba(147,51,234,0.3),0_0_120px_rgba(0,200,200,0.15)] gradient-border group hover:scale-[1.02] hover:-rotate-0 transition-all duration-700 z-10">
 
-                {/* Badge Overlay */}
-                <div className="absolute bottom-[25%] left-1/2 -translate-x-1/2 w-full flex justify-center z-20 pointer-events-none">
-                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[var(--color-brand-pink)]/30 text-[var(--color-brand-pink-light)] text-xs font-bold tracking-widest uppercase badge-pulse shadow-xl">
-                    <Flame size={14} /> New Release Coming Soon
-                  </span>
-                </div>
-              </div>
-            </div>
+    {/* Book Cover — always in flow to maintain frame height */}
+    <img
+      src="/the-mercy-bound-saga-mercy-in-fire.jpg"
+      alt="Mercy In Fire"
+      className={`w-full h-full object-cover transition-opacity duration-1000 ${
+        showCover ? "opacity-100" : "opacity-0"
+      }`}
+    />
+
+    {/* Teaser Video — sits on top, fades out when done */}
+    <video
+      ref={videoRef}
+      src="/mercy-in-fire-teaser.mp4"
+      autoPlay
+      muted
+      playsInline
+      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+        showCover ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
+      onEnded={() => setShowCover(true)}
+    />
+
+    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+    {/* Badge Overlay */}
+    <div className="absolute bottom-[25%] left-1/2 -translate-x-1/2 w-full flex justify-center z-20 pointer-events-none">
+      <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[var(--color-brand-pink)]/30 text-[var(--color-brand-pink-light)] text-xs font-bold tracking-widest uppercase badge-pulse shadow-xl">
+        <Flame size={14} /> New Release Coming Soon
+      </span>
+    </div>
+  </div>
+</div>
           </motion.div>
 
           {/* Bottom — Text */}
@@ -541,6 +566,7 @@ export default function Home() {
               "The Beast Underneath — Beauty & the Beast",
               "The Huntress — Red Riding Hood",
               "Ella's Prince — Alice in Wonderland",
+              "All 3 Books in 1 — Only $0.99!",
             ]}
             books={FAIRY_TALE}
             cols={3}
