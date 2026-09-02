@@ -125,7 +125,7 @@ const FAIRY_TALE = [
   },
   {
     title: "Fairytale Chronicles: 3-in-1 Collection",
-    imageUrl: "/fairytale-chronicles-3-in-1.jpg",
+    imageUrl: "/fairytale-chronicles-3-in-1.png",
     amazonLink: "https://www.amazon.com/dp/B08Q8NNVKJ",
   },
 ];
@@ -569,7 +569,7 @@ export default function Home() {
               "All 3 Books in 1 — Only $0.99!",
             ]}
             books={FAIRY_TALE}
-            cols={3}
+            isCarousel={true}
           />
         </div>
       </section>
