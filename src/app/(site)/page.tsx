@@ -336,8 +336,9 @@ function SeriesWithBlurb({
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
-  const [showCover, setShowCover] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  // const [showCover, setShowCover] = useState(false);
+  // const videoRef = useRef<HTMLVideoElement>(null);
+  const [showTrailer, setShowTrailer] = useState(false);
   const handleScrollToBooks = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.getElementById("books")?.scrollIntoView({ behavior: "smooth" });
@@ -384,27 +385,24 @@ export default function Home() {
            <div className="book-throb w-full aspect-[3/4] relative">
   <div className="absolute inset-0 -rotate-2 rounded-xl overflow-hidden border border-white/20 shadow-[0_30px_80px_rgba(147,51,234,0.3),0_0_120px_rgba(0,200,200,0.15)] gradient-border group hover:scale-[1.02] hover:-rotate-0 transition-all duration-700 z-10">
 
-    {/* Book Cover — always in flow to maintain frame height */}
+    {/* Book Cover */}
     <img
       src="/the-mercy-bound-saga-mercy-in-fire.jpg"
       alt="Mercy In Fire"
-      className={`w-full h-full object-cover transition-opacity duration-1000 ${
-        showCover ? "opacity-100" : "opacity-0"
-      }`}
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
     />
 
-    {/* Teaser Video — sits on top, fades out when done */}
-    <video
-      ref={videoRef}
-      src="/mercy-in-fire-teaser.mp4"
-      autoPlay
-      muted
-      playsInline
-      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-        showCover ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
-      onEnded={() => setShowCover(true)}
-    />
+    {/* Play Button Overlay */}
+    <button
+      onClick={() => setShowTrailer(true)}
+      className="absolute inset-0 flex items-center justify-center z-20 group/play"
+    >
+      <div className="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-xl transition-all duration-300 group-hover/play:scale-110 group-hover/play:bg-[var(--color-brand-purple)]/80">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+    </button>
 
     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
@@ -416,6 +414,33 @@ export default function Home() {
     </div>
   </div>
 </div>
+
+{/* Trailer Modal */}
+{showTrailer && (
+  <div
+    className="fixed inset-0 z-[999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+    onClick={() => setShowTrailer(false)}
+  >
+    <div
+      className="relative w-full max-w-sm aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <video
+        src="/mercy-in-fire-teaser.mp4"
+        autoPlay
+        controls
+        playsInline
+        className="w-full h-full object-cover"
+      />
+      <button
+        onClick={() => setShowTrailer(false)}
+        className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+)}
           </motion.div>
 
           {/* Bottom — Text */}
@@ -536,9 +561,78 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+{/* ── Fairytale Chronicles 3-in-1 ─────────────────────────────────────── */}
+      <section className="relative py-24 px-6 overflow-hidden" id="books">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-purple)]/[0.06] via-transparent to-[var(--color-brand-pink)]/[0.04] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[var(--color-brand-purple)]/[0.05] rounded-full blur-[120px] pointer-events-none" />
+        <div className="gradient-divider mb-24 relative z-10" />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
+          >
+            {/* Book Cover */}
+            <div className="w-full max-w-[280px] lg:max-w-[320px] flex-shrink-0">
+              <div className="relative group">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-purple)]/30 to-[var(--color-brand-pink)]/20 rounded-2xl blur-[40px] group-hover:blur-[60px] transition-all duration-500" />
+                <a href="https://www.amazon.com/dp/B08Q8NNVKJ" target="_blank" rel="noopener noreferrer" className="block relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(147,51,234,0.25)] group-hover:shadow-[0_30px_80px_rgba(147,51,234,0.4)] transition-all duration-500 group-hover:-translate-y-2">
+                  <img
+                    src="/fairytale-chronicles-3-in-1.png"
+                    alt="Fairytale Chronicles 3-in-1"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-[var(--color-brand-pink)] flex flex-col items-center justify-center shadow-lg">
+                    <span className="text-white text-[10px] font-bold leading-none">ONLY</span>
+                    <span className="text-white text-lg font-black leading-none">$0.99</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-xs font-semibold text-[var(--color-brand-purple-light)] mb-4 tracking-widest uppercase">
+                <Sparkles size={12} /> Limited Time Deal
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="gradient-text">3 Books.</span>
+                <br />
+                <span className="text-white">One Epic Collection.</span>
+              </h2>
+              <p className="text-slate-400 text-lg leading-relaxed mb-6 max-w-xl">
+                Get the complete Fairytale Chronicles collection — three beloved retellings bundled into one for just <span className="text-[var(--color-brand-pink-light)] font-bold">$0.99</span>. Beauty & the Beast, Red Riding Hood, and Alice in Wonderland reimagined like you&apos;ve never seen them before.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "The Beast Underneath — Beauty & the Beast retelling",
+                  "The Huntress — Red Riding Hood retelling",
+                  "Ella's Prince — Alice in Wonderland retelling",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 justify-center lg:justify-start">
+                    <span className="w-5 h-5 rounded-full bg-[var(--color-brand-purple)]/20 border border-[var(--color-brand-purple-light)]/30 flex items-center justify-center flex-shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-purple-light)]" />
+                    </span>
+                    <span className="text-slate-300 text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                <a href="https://www.amazon.com/dp/B08Q8NNVKJ" target="_blank" rel="noopener noreferrer" className="btn-gradient px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 flex items-center gap-2 hover:scale-105">
+                  Grab It for $0.99 <ArrowRight size={18} />
+                </a>
+                <p className="text-slate-600 text-xs">Available on Amazon Kindle</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* ── Speed Dating ─────────────────────────────────────────────────────── */}
       <section id="books" className="py-12 px-6 scroll-mt-28">
+        
         <div className="max-w-6xl mx-auto">
           <SeriesWithBlurb
             label="A Whimsical Encounter Like No Other"
