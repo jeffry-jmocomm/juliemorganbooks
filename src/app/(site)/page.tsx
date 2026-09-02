@@ -123,11 +123,11 @@ const FAIRY_TALE = [
     imageUrl: "/ellas-prince.jpg",
     amazonLink: "https://amzn.to/37TLzGS",
   },
-  {
-    title: "Fairytale Chronicles: 3-in-1 Collection",
-    imageUrl: "/fairytale-chronicles-3-in-1.png",
-    amazonLink: "https://www.amazon.com/dp/B08Q8NNVKJ",
-  },
+  // {
+  //   title: "Fairytale Chronicles: 3-in-1 Collection",
+  //   imageUrl: "/fairytale-chronicles-3-in-1.png",
+  //   amazonLink: "https://www.amazon.com/dp/B08Q8NNVKJ",
+  // },
 ];
 
 const ALCHEMY = [
@@ -660,7 +660,7 @@ export default function Home() {
               "The Beast Underneath — Beauty & the Beast",
               "The Huntress — Red Riding Hood",
               "Ella's Prince — Alice in Wonderland",
-              "All 3 Books in 1 — Only $0.99!",
+              
             ]}
             books={FAIRY_TALE}
             isCarousel={true}
