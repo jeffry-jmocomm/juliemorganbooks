@@ -15,14 +15,12 @@ export async function POST(request: NextRequest) {
     const GROUP_ID = process.env.MAILERLITE_GROUP_ID;
 
     if (!API_KEY) {
-      console.error("MAILERLITE_API_KEY is not set");
       return NextResponse.json(
         { error: "Newsletter service is not configured." },
         { status: 500 }
       );
     }
 
-    // MailerLite Classic API — add subscriber to a group (or general list)
     const url = GROUP_ID
       ? `https://api.mailerlite.com/api/v2/groups/${GROUP_ID}/subscribers`
       : `https://api.mailerlite.com/api/v2/subscribers`;

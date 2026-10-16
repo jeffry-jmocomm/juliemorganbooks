@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   title: "Julie Morgan - USA Today Bestselling Author",
   description:
     "Official website of USA TODAY Bestselling Author Julie Morgan. Explore paranormal fantasy, dark romance, and supernatural adventure books.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Julie Morgan - USA Today Bestselling Author",
     description: "Official website of USA TODAY Bestselling Author Julie Morgan. Explore paranormal fantasy, dark romance, and supernatural adventure books.",
