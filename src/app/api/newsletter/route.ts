@@ -32,9 +32,10 @@ export async function POST(request: NextRequest) {
         "X-MailerLite-ApiKey": API_KEY,
       },
       body: JSON.stringify({
-        email,
-        resubscribe: true,
-      }),
+  email,
+  type: "active",
+  resubscribe: true,
+}),
     });
 
     if (!response.ok) {
